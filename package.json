@@ -1,0 +1,28 @@
+{
+  "name": "protractortscframework",
+  "version": "1.0.0",
+  "description": "First Protractor TSC Framework + Cucumber with client reporting tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArielHM2404/ProtractorTSCFramework.git"
+  },
+  "author": "Ariel Hilario Minor",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "~3.5.14",
+    "@types/jasminewd2": "~2.0.8",
+    "@types/node": "~14.6.3",
+    "jasmine": "~3.6.1",
+    "protractor": "^7.0.0",
+    "ts-node": "~9.0.0",
+    "typescript": "~4.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/ArielHM2404/ProtractorTSCFramework/issues"
+  },
+  "homepage": "https://github.com/ArielHM2404/ProtractorTSCFramework#readme"
+}
