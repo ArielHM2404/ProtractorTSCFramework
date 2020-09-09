@@ -1,11 +1,11 @@
 import {browser, by, element} from 'protractor';
-import { Calculatior } from './PageObject/Calculatior';
+import { Calculator } from './PageObject/Calculator';
 
 describe('Chain locators demo',function() {  
 
 
     it('Open Angular js website',async()=> {
-       let cal = new Calculatior();
+       let cal = new Calculator();
 
     browser.get('http://juliemr.github.io/protractor-demo/');
     //repeater ,  chain locators, And css for identical tags
