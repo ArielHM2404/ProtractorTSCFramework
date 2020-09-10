@@ -2,7 +2,9 @@ import { Given, When, Then } from "cucumber";
 import {Calculator} from '../PageObject/Calculator';
 import { browser } from "protractor";
 import { angularHomePage } from '../PageObject/angularHomePage';
+import chai from 'chai';
 
+var expect = chai.expect;
 let cal = new Calculator();
 let homePage = new angularHomePage();
 
@@ -11,6 +13,11 @@ let homePage = new angularHomePage();
             await browser.get('http://juliemr.github.io/protractor-demo/');
            
          });
+
+         Given('I will navigate to calc {string}', async (site)=> {
+          await browser.get(site);
+         
+       });
 
          When('I add two numbers {string} and {string}', async (string, string2)=> {
             
@@ -23,6 +30,7 @@ let homePage = new angularHomePage();
           await cal.go.click();
           await cal.getResult.getText().then(function(text)
           {
+            expect(text).to.equal(string);
           
           console.log(text);
           })

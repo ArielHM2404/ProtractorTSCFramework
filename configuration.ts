@@ -1,6 +1,7 @@
 // An example configuration file
 import {Config} from "protractor";
 
+
 export let config:Config = {
 
 

@@ -1,5 +1,6 @@
 // An example configuration file
 import {Config} from "protractor";
+import * as reporter from 'cucumber-html-reporter';
 
 export let config:Config = {
 
@@ -25,10 +26,35 @@ export let config:Config = {
 
     cucumberOpts: {
       // require step definitions
+      tags: '@AngularTesting',
+      format: 'json:tmp/CucumberReport.json',
       require: [
         './StepsDefinition/*.js' // accepts a glob
       ]
-    }
+    },
+
+    onComplete: ()=> {
+      var options = {
+        theme: 'bootstrap',
+        jsonFile: 'tmp/CucumberReport.json',
+        output: 'tmp/Cucumber_Report.html',
+        reportSuiteAsScenarios: true,
+        scenarioTimestamp: true,
+        launchReport: true,
+        metadata: {
+            "App Version":"0.3.2",
+            "Test Environment": "STAGING",
+            "Browser": "Chrome  54.0.2840.98",
+            "Platform": "Windows 10",
+            "Parallel": "Scenarios",
+            "Executed": "Remote"
+          
+        }
+    };
+ 
+    reporter.generate(options);
+    },
+
   
     // Options to be passed to Jasmine-node.
     // jasmineNodeOpts: {
